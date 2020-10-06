@@ -2,11 +2,11 @@
 using namespace std;
 int board[9][9];
 bool no_duplicate(int y, int x, int num){
-    //ÇàÈ®ÀÎ
+    //í–‰í™•ì¸
     for(int i=0;i<9;i++) if(board[y][i]==num) return false;
-    //¿­È®ÀÎ
+    //ì—´í™•ì¸
     for(int i=0;i<9;i++) if(board[i][x]==num) return false;
-    //»ç°¢ÇüÈ®ÀÎ
+    //ì‚¬ê°í˜•í™•ì¸
     for(int i=(y/3)*3;i<(y/3)*3+3;i++){
         for(int j=(x/3)*3;j<(x/3)*3+3;j++) if(board[i][j]==num) return false;
     }
@@ -18,7 +18,7 @@ void solution(int y, int x){
         return;
     }
     if(y==9){
-        //ÇÁ¸°Æ®
+        //í”„ë¦°íŠ¸
         for(int i=0;i<9;i++){
             for(int j=0;j<9;j++) printf("%d ",board[i][j]);
             printf("\n");
