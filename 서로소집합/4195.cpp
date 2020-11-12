@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
+#define MAX 200001 
 using namespace std;
 map<string,int> m;
-int parent[100001];
-int cnt[100001];
+int parent[MAX];
+int cnt[MAX];
 int findParent(int x){
     if(x==parent[x]) return x;
     return parent[x]=findParent(parent[x]);
@@ -26,7 +27,7 @@ int main(){
         int f;
         scanf("%d",&f);
         int idx=1;
-        for(int j=0;j<100001;j++){
+        for(int j=0;j<MAX;j++){
             parent[j]=j;
             cnt[j]=1;
         }
