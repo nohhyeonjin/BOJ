@@ -5,7 +5,6 @@ int s,e;
 int inDegree[10001];
 int dist[10001];
 vector<pair<int,int>> edges[10001]; //a->{b,cost}
-int from[10001];
 vector<pair<int,int>> revEdges[10001];  //b->{a,cost}
 void topologySort(){
     queue<int> q;
@@ -18,7 +17,6 @@ void topologySort(){
             int cost=edges[cur][i].second;
             if(dist[next]<dist[cur]+cost){
                 dist[next]=dist[cur]+cost;
-                from[next]=cur;
             }
             inDegree[next]--;
             if(inDegree[next]==0) q.push(next);
